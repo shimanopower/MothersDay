@@ -7,17 +7,17 @@ For the actual properties of CAEmitterLayer and CAEmitterCell I kindly borrowed 
 
 However, while UIViews are simply wrappers around CALayers, SwiftUI uses lower level classes to render its content to the screen. Since we have no access to CALayer directly in SwiftUI, we need to add our CALayers to a UIView and then use UIRepresentable protocol to wrap our UIView so that we can create an instance of a UIView object in our SwiftUI view. 
 
-So here is our ConfettiView created as a struct conforming to UIViewRepresentable. To conform to the protocol we must implement this method: makeUIView(context: Context) -> UIView. SwiftUi will automatically call this method to create the view object. But this method is only called once so updating this view done through this method: updateUIView(_ uiView: UIView, context: Context.
+So here is our ConfettiView created as a struct conforming to UIViewRepresentable. To conform to the protocol we must implement this method: makeUIView(context: Context) -> UIView. SwiftUi will automatically call this method to create the view object. But this method is only called once so updating this view done through this method: updateUIView(_ uiView: UIView, context: Context).
 
-  `struct ConfettiView: UIViewRepresentable {
-    func makeUIView(context: Context) -> UIView {
-        // More code
-    }
-    
-    func updateUIView(_ uiView: UIView, context: Context) {
-        // We won't be updating so this method will go unused
-    }
-  }`
+`struct ConfettiView: UIViewRepresentable {
+  func makeUIView(context: Context) -> UIView {
+    // More code
+ }`
+
+  `func updateUIView(_ uiView: UIView, context: Context) {
+      // We won't be updating so this method will go unused
+  }
+}`
   
 To create our particle emitter we create an instance of CAEmitterLayer():
 
@@ -33,21 +33,21 @@ To create the indvidual piece of confetti we are going to call a seperate method
       
 Then we call that method to create our red, green, and blue confetti:
 
-  let red = self.makeEmitterCell(color: UIColor.red)
-  let green = self.makeEmitterCell(color: UIColor.green)
-  let blue = self.makeEmitterCell(color: UIColor.blue)
+  `let red = self.makeEmitterCell(color: UIColor.red)`
+  `let green = self.makeEmitterCell(color: UIColor.green)`
+  `let blue = self.makeEmitterCell(color: UIColor.blue)`
   
 Then we instantiate an instance of our view:
 
-  let view = UIView()
+  `let view = UIView()`
   
 Then we add our CAEmitterLayer() by accessing UIView's layer property:
 
-  view.layer.addSublayer(particleEmitter)
+  `view.layer.addSublayer(particleEmitter)`
   
 Then we simply return the view:
 
-  return view
+  `return view`
 
 The complete ConffetiView looks like this: 
   
