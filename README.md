@@ -9,7 +9,7 @@ However, while UIViews are simply wrappers around CALayers, SwiftUI uses lower l
 
 So here is our ConfettiView created as a struct conforming to UIViewRepresentable. To conform to the protocol we must implement this method: makeUIView(context: Context) -> UIView. SwiftUi will automatically call this method to create the view object. But this method is only called once so updating this view done through this method: updateUIView(_ uiView: UIView, context: Context.
 
-  struct ConfettiView: UIViewRepresentable {
+  `struct ConfettiView: UIViewRepresentable {
     func makeUIView(context: Context) -> UIView {
         // More code
     }
@@ -17,7 +17,7 @@ So here is our ConfettiView created as a struct conforming to UIViewRepresentabl
     func updateUIView(_ uiView: UIView, context: Context) {
         // We won't be updating so this method will go unused
     }
-  }
+  }`
   
 To create our particle emitter we create an instance of CAEmitterLayer():
 
