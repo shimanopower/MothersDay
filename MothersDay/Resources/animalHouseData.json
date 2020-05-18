@@ -1,0 +1,38 @@
+[
+    {
+        "id": "2DABB464-3941-4478-BA37-975445B034DA",
+        "name": "Stella",
+        "imageString": "Stella",
+        "mothersDayMessage": "Love Stella"
+    },
+    {
+        "id": "15863F41-B858-4AE7-BA28-110AD2A3DDFE",
+        "name": "Audrey",
+        "imageString": "Audrey",
+        "mothersDayMessage": "Love Audrey"
+    },
+    {
+        "id": "4D9049C1-E808-4371-AAAB-BC95DC7D343A",
+        "name": "Paisley",
+        "imageString": "Paisley",
+        "mothersDayMessage": "Love Paisley"
+    },
+    {
+        "id": "4D190A4F-E193-4057-928C-C50718C50D43",
+        "name": "Baboo",
+        "imageString": "Baboo",
+        "mothersDayMessage": "Love Baboo"
+    },
+    {
+        "id": "363207B3-4C40-4EDA-BC60-031370856180",
+        "name": "Samson",
+        "imageString": "Samson",
+        "mothersDayMessage": "Love Samson"
+    },
+    {
+        "id": "DE27E334-7B42-4ACF-B4E1-9F119EF63788",
+        "name": "Alvin",
+        "imageString": "Alvin",
+        "mothersDayMessage": "Love Alvin"
+    }
+]
