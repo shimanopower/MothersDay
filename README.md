@@ -5,7 +5,7 @@ From Core Animation we get CALayer which is responsible for rendering visual con
 
 However, while UIViews are simply wrappers around CALayers, SwiftUI uses lower level classes to render its content to the screen. Since we have no access to CALayer directly in SwiftUI, we need to add our CALayers to a UIView and then use UIRepresentable protocol to wrap our UIView so that we can create an instance of a UIView object in our SwiftUI view. 
 
-So here is our ConfettiView created as a struct conforming to UIViewRepresentable. To conform to the protocol we must implement this method: makeUIView(context: Context) -> UIView. SwiftUi will automatically call this method to create the view object. But this method is only called once so updating this view done through this method: updateUIView(_ uiView: UIView, context: Context).
+So here is our ConfettiView created as a struct conforming to UIViewRepresentable. To conform to the protocol we must implement this method: makeUIView(context: Context) -> UIView. SwiftUi will automatically call this method to create the view object. But this method is only called once so updating this view is done through this method: updateUIView(_ uiView: UIView, context: Context).
 
     struct ConfettiView: UIViewRepresentable {
         func makeUIView(context: Context) -> UIView {
