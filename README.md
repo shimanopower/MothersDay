@@ -1,4 +1,4 @@
-# MothersDay
+# Mother's Day App
 ## A simple Mother's Day app/card that embeds a particle emitter into SwiftUI
 
 From Core Animation we get CALayer which is responsible for rendering visual content and animations in UIViews. The particle emitter comes curtesy of two subclasses of CALayer: CAEmitterLayer and CAEmitterCell. For creating our confetti, CAEmitterLayer provides properties that define the confetti storm and CAEmitterCell provides properties that defnite the individual pieces of confetti. 
@@ -117,8 +117,7 @@ Then the only thing left is simply to create an instance of ConfettiView in our 
             ConfettiView()
         }
     }
-  }
-
-
+ 
+Final Result can be seen here:
 
 [![Video](http://img.youtube.com/vi/R9CEKy4DSoM/0.jpg)](https://youtu.be/R9CEKy4DSoM "Video")
