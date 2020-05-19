@@ -19,7 +19,7 @@ So here is our ConfettiView created as a struct conforming to UIViewRepresentabl
     
 Conforming to UIViewRepresentable requires us to implement the makeUIView method. SwiftUI will automatically call this method to create the view object. But this method is only called once. So updating this view is done through the updateView method.
   
-To create our particle emitter we create an instance of CAEmitterLayer():
+To create our particle emitter we create an instance of CAEmitterLayer:
 
     let particleEmitter = CAEmitterLayer()
 
@@ -37,21 +37,18 @@ Then we call that method to create our red, green, and blue confetti:
     let green = self.makeEmitterCell(color: UIColor.green)
     let blue = self.makeEmitterCell(color: UIColor.blue)
   
-Then we instantiate an instance of our view:
+Then we add our CAEmitterLayer by accessing UIView's layer property:
 
     let view = UIView()
-  
-Then we add our CAEmitterLayer() by accessing UIView's layer property:
-
     view.layer.addSublayer(particleEmitter)
   
 Then we simply return the view:
 
     return view
     
-For the actual properties of CAEmitterLayer and CAEmitterCell I borrowed Paul Hudson's values which can be found here: https://www.hackingwithswift.com/example-code/calayer/how-to-emit-particles-using-caemitterlayer 
+For the actual properties of CAEmitterLayer and CAEmitterCell I used Paul Hudson's values which can be found here: https://www.hackingwithswift.com/example-code/calayer/how-to-emit-particles-using-caemitterlayer 
 
-But play around withe value yourself as particle emitters are a lot of fun. :) 
+But play around with the properties yourself as particle emitters are a lot of fun. :) 
 
 The complete ConfettiView looks like this: 
   
