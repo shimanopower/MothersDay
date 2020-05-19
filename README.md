@@ -1,11 +1,11 @@
 # Mother's Day App
 ## A simple Mother's Day app/card that embeds a particle emitter into SwiftUI
 
-From Core Animation we get CALayer which is responsible for rendering visual content and animations in UIViews. The particle emitter comes curtesy of two subclasses of CALayer: CAEmitterLayer and CAEmitterCell. For creating our confetti, CAEmitterLayer provides properties that define the confetti storm and CAEmitterCell provides properties that defnite the individual pieces of confetti. 
+From Core Animation we get CALayer which is responsible for rendering visual content and animations in UIViews. The particle emitter is derived from two subclasses of CALayer: CAEmitterLayer and CAEmitterCell. For creating our confetti, CAEmitterLayer provides properties that define the confetti storm and CAEmitterCell provides properties that definite the individual pieces of confetti. 
 
-However, while UIViews are simply wrappers around CALayers, SwiftUI uses lower level classes to render its content to the screen. Since we have no access to CALayer directly in SwiftUI, we need to add our CALayers to a UIView and then use UIRepresentable protocol to wrap our UIView so that we can create an instance of a UIView object in our SwiftUI view. 
+Although, UIViews are simply wrappers around CALayers, SwiftUI doesn't provide a way to use CALayers directly. So we need to wrap our CALayer in a UIView and then use UIViewRepresentable protocol to wrap our UIView. Then we can create an instance of a UIView object capable of using a CALayer in our SwiftUI view. 
 
-So here is our ConfettiView created as a struct conforming to UIViewRepresentable. 
+So here is our ConfettiView created as a struct conforming to UIViewRepresentable:
 
     struct ConfettiView: UIViewRepresentable {
         func makeUIView(context: Context) -> UIView {
@@ -23,7 +23,7 @@ To create our particle emitter we create an instance of CAEmitterLayer():
 
     let particleEmitter = CAEmitterLayer()
 
-To create the indvidual piece of confetti we are going to call a seperate method that takes a parameter of UIColor and returns a CAEmitterCell:
+To create the individual piece of confetti we are going to call a separate method that takes a parameter of UIColor and returns a CAEmitterCell:
 
     func makeEmitterCell(color: UIColor) -> CAEmitterCell {
         let cell = CAEmitterCell()
@@ -49,9 +49,11 @@ Then we simply return the view:
 
     return view
     
-For the actual properties of CAEmitterLayer and CAEmitterCell I kindly borrowed Paul Hudson's values which can be found here: https://www.hackingwithswift.com/example-code/calayer/how-to-emit-particles-using-caemitterlayer
+For the actual properties of CAEmitterLayer and CAEmitterCell I borrowed Paul Hudson's values which can be found here: https://www.hackingwithswift.com/example-code/calayer/how-to-emit-particles-using-caemitterlayer 
 
-The complete ConffetiView looks like this: 
+But play around withe value yourself as particle emitters are a lot of fun. :) 
+
+The complete ConfettiView looks like this: 
   
     struct ConfettiView: UIViewRepresentable {
         func makeUIView(context: Context) -> UIView {
